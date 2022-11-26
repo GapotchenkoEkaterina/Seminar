@@ -330,5 +330,61 @@ Console.WriteLine($"Квадрат числа {number} = {sqr1}");
 // for(int i=1; i <= N; i++)
 // Console.WriteLine($"{Math.Pow(i,3)}");
 
+// _________________________________________Домашнее задание к четвертому Семинару___________________________________________________________
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. 
+// (Задачи, решенные через Math.Pow, будут отправлены на переделку, так как задача стоит в том, чтобы написать цикл)
+ 
+// 3, 5 -> 243 (3⁵)
+ 
+// 2, 4 -> 16
+ 
+// Console.WriteLine("Введите Число А: ");
+// int A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите Число B: ");
+// int B = int.Parse(Console.ReadLine()!);
+// if(B < 0) {B = B * -1;};
+// Console.WriteLine($"Возведение числа {A} в степень числа {B} следующее {GetdegreeA(A)}");
+// int GetdegreeA(int degree){
+// int degreeA = 1;
+//     for(int i = 1; i <= B ; i++){
+//          degreeA = degreeA * A;
+//          }  
+//     return degreeA;
+//     }
+ 
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+ 
+// 452 -> 11
+ 
+// 82 -> 10
+ 
+// 9012 -> 12
+ 
+// Console.WriteLine("Введите число n: ");
+// int n = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Сумма чисел состовляющих число {n} будет равна {GetSum(n)}");
+// int GetSum(int limit){
+// int sum = 0; 
+// while(n > 0){
+//     int dig = n % 10;  
+//     sum = sum + dig;   
+//     n = n / 10;         
+// }
+// return sum;
+// }
 
+
+ 
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран. (числа берете любые)
+ 
+// int[] arr = array(8);
+// Console.WriteLine($"Массив [{String.Join(", ",arr)}]");
+// int[] array(int number){
+//   int[] array1 = new int[number];{ 
+//    for(int i=0; i < array1.Length; i++){
+//     array1[i] = new Random().Next(0,650);
+// }  
+// return array1;
+// }
+// }
 
