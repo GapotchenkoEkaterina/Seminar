@@ -388,3 +388,152 @@ Console.WriteLine($"Квадрат числа {number} = {sqr1}");
 // }
 // }
 
+// _________________________________________Домашнее задание к пятому Семинару___________________________________________________________
+
+
+ 
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, 
+// которая покажет количество чётных чисел в массиве.
+ 
+// [345, 897, 568, 234] -> 2
+ 
+// int[] array = GetArray(5);
+// Console.WriteLine($"[{String.Join(" ,", array)}]");
+// Console.WriteLine($"В массиве количество четных чисел равняется {Count(array)}");
+ 
+// int[] GetArray(int num){
+//     int[]mas = new int[num];
+//     for(int i = 0; i < mas.Length; i++){
+//         mas[i] = new Random().Next(100,1000);
+//     }
+//     return mas;
+// }
+ 
+// int Count(int[] mas)
+// {
+//     int count = 0;
+//     foreach(int el in mas){
+//         if(el % 2 == 0)
+//         {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+ 
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях(индексы элементов должны быть нечетными(1,3,5 и тд)).
+ 
+// [3, 7, 23, 12] -> 19
+ 
+// [-4, -6, 89, 6] -> 0
+ 
+// int[] array = GetArray(5);
+// Console.WriteLine($"[{String.Join(" ,", array)}]");
+// Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях равняется {Count(array)}");
+ 
+// int[] GetArray(int num){
+//     int[]mas = new int[num];
+//     for(int i = 0; i < mas.Length; i++){
+//         mas[i] = new Random().Next(1000);
+//     }
+//     return mas;
+// }
+ 
+// int Count(int[] mas)
+// {
+//     int count = 0;
+//     for(int i = 0; i < mas.Length; i+=1){
+//         if(i%2!=0) 
+//         count = count += mas[i];
+        
+//     }
+//     return count;
+// }
+ 
+// Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+// Результат запишите в новом массиве.
+ 
+// [1 2 3 4 5] -> 5 8 3
+ 
+// [6 7 3 6] -> 36 21
+ 
+// Console.WriteLine("Введите размер массива: ");
+ 
+// int num = int.Parse(Console.ReadLine()!);
+ 
+// int [] array = new int [num];
+// GetArray(array);
+ 
+// PairArray(array);
+ 
+// void GetArray(int[] array)
+// {
+//     for(int i=0; i<array.Length; i++){
+//         array[i] = new Random().Next(-999,999);
+//     }
+//     Console.WriteLine($"Массив:  [{String.Join(" , ",array)}]");
+// } 
+ 
+//  void PairArray(int[] array)
+//  {  
+//     int[] mult = new int [(array.Length/2)+1];
+//     int a = 0;
+//     int i = 0;
+//     int len = array.Length-1;
+//     while(i < len)
+//     {
+//     mult[a] = array[i] * array[len];
+//     a++;
+//     i++;
+//     len--; 
+//    }
+ 
+//    if (array.Length%2 > 0){
+//     mult[a] = array[array.Length/2];
+//    }
+//    else{
+//     mult[a] = 0;
+//    }
+//    Console.WriteLine($"Массив перемноженных элементов:  [{String.Join(" , ",mult)}]");
+//    }
+
+
+
+ 
+// Задача 38: Задайте массив целых чисел от -10 до 10. Найдите разницу между максимальным и минимальным элементов массива.
+ 
+// int[] array = GetArray(5);
+// Console.WriteLine($"[{String.Join(" ,", array)}]");
+// Console.WriteLine($"{maxValue(array)}, {minValue(array)}");
+// Console.WriteLine($" Разницу между максимальным и минимальным элементов массива {maxValue(array)-minValue(array)}");
+ 
+// int[] GetArray(int num){
+//     int[]mas = new int[num];
+//     for(int i = 0; i < mas.Length; i++){
+//         mas[i] = new Random().Next(-10,11);
+//     }
+//     return mas;
+// }
+ 
+// int maxValue(int[] mas)
+// {int max = 0;
+    
+//     for(int i = 0; i < mas.Length; i++){
+        
+//         if(mas[i] > max) 
+//         max = mas[i];
+        
+//     }
+//     return max;
+// }
+ 
+// int minValue(int[] mas)
+// {int min = 0;
+//     for(int i = 0; i < mas.Length; i++){
+//         if(mas[i] < min) 
+//         min = mas[i];
+        
+//     }
+//     return min;
+// }
