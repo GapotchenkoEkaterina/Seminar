@@ -537,3 +537,193 @@ Console.WriteLine($"Квадрат числа {number} = {sqr1}");
 //     }
 //     return min;
 // }
+
+// _________________________________________Шестой Семинар___________________________________________________________
+ 
+// Задача 39: Напишите программу, которая перевернет одномерный массив
+// (последний элемент будет на первом месте, а первый - на последнем и т.д.)
+ 
+// int[] array = GetArray(10, 0, 10);
+// Console.WriteLine($"[{String.Join(", ", array)}]");
+ 
+// int[] result = ReverseArray2(array);
+// Console.WriteLine($"[{String.Join(", ", result)}]");
+ 
+// Reversearray1(array);
+// Console.WriteLine($"[{String.Join(", ", result)}]");
+ 
+// // - - - - - - - - - -- - - -- - -- -- -- - Методы - - - - - - - - - - - - - - - - - -- - - - - - - - - -- 
+// int[] GetArray(int size, int minValue, int maxValue){
+//     int[] result = new int [size];
+//     for(int i = 0; i < size; i++){
+//         result[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return result;
+// }
+ 
+// void Reversearray1 (int[] array){
+//     for(int i = 0; i < array.Length / 2; i++){
+//         int temp = array[i];
+//         array[i] = array[array.Length - i -1];
+//         array[array.Length - i - 1] = temp;
+//     }
+// }
+ 
+// int[] ReverseArray2 (int[] array){
+//     int[] result = new int[array.Length];
+//     for(int i = 0; i < array.Length; i++){
+//         result[i] = array[array.Length - i - 1];
+//     }
+//     return result;
+// }
+ 
+// Задача 40: Напишите программу, которая принимает на вход три числа и проверяет, может ли существовать треугольник со сторонами такой длины.
+// Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
+ 
+// int A,B,C;
+// Console.WriteLine("Введите сторону А:");
+// A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите сторону B:");
+// B = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите сторону C:");
+// C = int.Parse(Console.ReadLine()!);
+// if(Treugol(A, B, C))
+//     Console.WriteLine("Такой треугольник существует!");
+// else
+//     Console.WriteLine("Такой треугольник не существует!");
+
+
+ 
+// Console.WriteLine($"{Treugol(A, B, C)}");
+ 
+// bool Treugol(int A, int B, int C){
+//     if((A + B) > C && (A + C) > B && (B + C) > A)
+//        return true;
+//     return false;
+// }
+
+
+ 
+// Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное
+// Делится число на 2 и записываются его остатки с конца в начало
+ 
+// Console.WriteLine("Введите десятичное число: ");
+// int A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(RereNum(A));
+ 
+// string RereNum(int num)
+// {
+//     string result ="";
+//     while (num != 0)
+//     {
+//         int num1 = num % 2;
+//         num = num / 2;
+//         string num3 = Convert.ToString(num1);
+//         result = result + num1;
+//     }
+//     return result;
+// }
+ 
+// Задача 44: Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
+// Если N = 5 то 0 1 1 2 3 
+// Если N = 3 то 0 1 1  
+// Если N = 7 то 0 1 1 2 3 5 8
+ 
+// int n = 20;
+ 
+// int first = 0;
+ 
+// int second = 1;
+ 
+// Console.Write($"{first} {second}");
+
+
+ 
+// for (int i = 3; i <= n; i++){
+ 
+//     int num = 0;
+ 
+//     num = first + second;
+ 
+//     Console.Write($" {num}");
+ 
+//     first = second;
+ 
+//     second = num;
+ 
+// }
+ 
+// Задача 45: Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
+ 
+// int[] arr = GetArray(10);
+// Console.WriteLine($"[{String.Join(", ",arr)}]");
+// Console.WriteLine($"[{String.Join(", ",CopyArray(arr))}]");
+ 
+// int[] CopyArray(int[] array){
+//     int[] copyArray = new int[array.Length];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         copyArray[i] = array[i];
+//     }
+//     return copyArray;
+// }
+ 
+// int[] GetArray(int size, int minValue = 0, int maxValue = 10){
+//     int[] array = new int[size];
+//     for(int i = 0; i < size; i++){
+//         array[i] = new Random().Next(minValue, maxValue+1);
+//     }
+//     return array;
+// }
+ 
+// _________________________________________Домашнее задание к Шестому Семинару___________________________________________________________
+ 
+// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел строго больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 4
+ 
+// Console.WriteLine("Введите числа: ");
+// int[] Numbers = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
+// int count = 0;
+// for(int i = 0; i < Numbers.Length; i++){
+//     if(Numbers[i] > 0)
+//     count++;
+// }
+// Console.WriteLine($"Положительных чисел: {count}");
+ 
+// Задача 43: Написать программу, которая на вход принимает массив из любого количества элементов (не менее 6)в промежутке от 0 до 100, 
+// а на выходе выводит этот же массив, но отсортированный по возрастанию(от меньшего числа к большему).
+ 
+// Console.WriteLine("Введите размер массива: ");
+ 
+// int num = int.Parse(Console.ReadLine()!);
+ 
+// int [] array = new int [num];
+// GetArray(array);
+// Console.WriteLine($"Массив:  [{String.Join(" , ",SortArray(array))}]");  
+ 
+// void GetArray(int[] array)
+// {
+//     for(int i=0; i<array.Length; i++){
+//         array[i] = new Random().Next(0,101);
+//     }
+//     Console.WriteLine($"Массив:  [{String.Join(" , ",array)}]");
+// } 
+ 
+//  int[] SortArray(int[] array)
+//  {
+ 
+//      for (int i = 0; i < array.Length; i++)
+//     {
+//         for (int j = 0; j < array.Length - 1; j++)
+//         {
+//             if (array[j] > array[j + 1])
+//             {
+//             int temporary = array[j];
+//             array[j] = array[j + 1];
+//             array[j + 1] = temporary;
+//             }        
+//         }
+//     }
+//     return array;
+// }
