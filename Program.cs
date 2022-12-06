@@ -727,3 +727,370 @@ Console.WriteLine($"Квадрат числа {number} = {sqr1}");
 //     }
 //     return array;
 // }
+
+// _________________________________________Седьмой Семинар___________________________________________________________
+ 
+// Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+ 
+// int[,] array = GetArray(rows, columns, 0, 10);
+// PrintArray(array);
+ 
+// // ------------------Методы-----------------------
+ 
+// // Метод создания двумерного массива
+ 
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+ 
+// // Метод печати двумерного массива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+ 
+// Задача 48: Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+ 
+//  m = 3, n = 4.    
+// 0 1 2 3
+// 1 2 3 4
+// 2 3 4 5
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+ 
+// int[,] array = GetArray(rows, columns, 0, 10);
+// PrintArray(array);
+ 
+// // ------------------Методы-----------------------
+ 
+// // Метод создания двумерного массива
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = i + j;
+//         }
+//     }
+//     return result;
+// }
+ 
+// Метод печати двумерного массива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+ 
+// Задача 49: Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты.
+// Например, изначально массив выглядел вот так:
+ 
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+ 
+// Новый массив будет выглядеть вот так:
+ 
+// 1 4 7 2
+// 5 81 2 9
+// 8 4 2 4
+ 
+// Задача 51: Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+ 
+// Задача 51(1): Задать двумерный массив и сделать сортировку элементов по возрастанию в нечетных столбцах
+//  Решение задач 49 и 51
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows,columns,0,10);
+ 
+// PrintArray(array);
+// GetArrayMethod(array);
+// Console.WriteLine("====================");
+// PrintArray(array);
+// GetDiag(array);
+// GetSortColumnNec(array);
+ 
+// // ------------------Методы-----------------------
+ 
+// // Метод создания двумерного массива
+ 
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+ 
+// // // Метод печати двумерного масссива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+ 
+//  Метод замены  элементов на их квадраты.
+ 
+// void GetArrayMethod(int[,] array){
+//  for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if(i%2==0 && j%2==0) array[i,j]=(int)Math.Pow(array[i,j],2) ;
+//         }
+//     }
+// }
+ 
+//  Метод нахождения суммы элементов находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+ 
+// void GetDiag(int[,] array){
+// int sum =0;
+//  for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if(i==j){
+//                 Console.Write($"{array[i,j]} + ");
+//                 sum=sum+array[i,j];
+//             }
+//         }
+//     }
+//      Console.WriteLine($"Сумма = {sum}");
+// }
+ 
+// метод сортировки элементов по возрастанию в нечетных столбцах
+ 
+// void GetSortColumnNec(int[,] array)
+// {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         if (j % 2 != 0)
+//         {
+//             bool flag = true;
+//             while (flag)
+//             {
+//                 flag = false;
+//                 for (int i = 0; i < array.GetLength(0) - 1; i++)
+//                 {
+//                     if (array[i, j] > array[i + 1, j])
+//                     {
+//                         int stakan = array[i, j];
+//                         array[i, j] = array[i + 1, j];
+//                         array[i + 1, j] = stakan;
+//                         flag = true;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+ 
+// _________________________________________Домашнее задание к Седьмому Семинару___________________________________________________________
+ 
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+ 
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows,columns,0,10);
+ 
+// PrintArray(array);
+// GetAvgColumn(array);
+ 
+// ------------------Методы-----------------------
+ 
+// Метод создания двумерного массива
+ 
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+ 
+// // Метод печати двумерного массива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+ 
+// void GetAvgColumn(int[,] array)
+// {
+//     Console.Write("[");
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         double sum = 0;
+//         {
+//             for (int i = 0; i < array.GetLength(0); i++)
+//             {
+//                 sum = sum + array[i, j];
+//             }
+//             Console.Write($"  {(sum / array.GetLength(0)):f2}  ");
+//         }
+//     }
+//     Console.WriteLine("]");
+// }
+ 
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+ 
+// i = 5; j = 2 -> такого числа в массиве нет
+// i = 1; j = 1 -> 9
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows,columns,0,10);
+// PrintArray(array);
+ 
+// Console.WriteLine("Введите номер строки массива: ");
+// int srows = int.Parse(Console.ReadLine()!)-1;
+ 
+// Console.WriteLine("Введите номер столбца массива: ");
+// int scolumns = int.Parse(Console.ReadLine()!)-1;
+ 
+// Searchnumbyloc(array, srows, scolumns);
+ 
+// ------------------Методы-----------------------
+ 
+// Метод создания двумерного массива
+ 
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+ 
+// // Метод печати двумерного массива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+ 
+// Метод поиска элемента по позиции в двумерном массиве
+ 
+// void Searchnumbyloc(int[,]array, int srows, int scolumns){    
+//     int sernumber = 0;
+//     for(int i = 0; i < array.GetLength(0); i++){        
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             if(i == srows && j == scolumns){
+//                 sernumber = array[i,j]; Console.WriteLine($"Найдено число {array[i,j]}");
+//             }
+//         }
+//     }  
+//         if(srows < 0 | srows > array.GetLength(0)-1 | scolumns <0 | scolumns > array.GetLength(0)-1){ 
+//             Console.WriteLine("Данного числа нет в массиве");}                
+// }       
+
+
+
+ 
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+ 
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// double[,] array = GetArray(rows,columns);
+ 
+// PrintArray(array);
+
+
+ 
+// ------------------Методы-----------------------
+ 
+// Метод создания двумерного массива
+ 
+// double[,] GetArray(int m, int n){
+//     double[,] result = new double[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().NextDouble();
+//                                }
+//     }
+//     return result;
+// }
+ 
+// Метод печати двумерного массива
+ 
+// void PrintArray(double[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]:f1} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
