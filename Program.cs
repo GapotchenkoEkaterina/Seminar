@@ -1094,3 +1094,371 @@ Console.WriteLine($"Квадрат числа {number} = {sqr1}");
 //         Console.WriteLine();
 //     }
 // }
+
+// _________________________________________Восьмой Семинар___________________________________________________________
+//  Задача 53: Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+ 
+// Например, задан массив:
+ 
+// 1 4 7 2
+ 
+// 5 9 2 3
+ 
+// 8 4 2 4
+ 
+// В итоге получается вот такой массив:
+ 
+// 8 4 2 4
+ 
+// 5 9 2 3
+ 
+// 1 4 7 2
+ 
+// Console.Write("Введите кол-во строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите кол-во столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] arrayFirst = GetArray(rows, columns, 10, 99);
+// PrintArray(arrayFirst);
+// Console.WriteLine("=====================");
+ 
+// SortArray(arrayFirst);
+ 
+// PrintArray(arrayFirst);
+ 
+// if (arrayFirst.GetLength(0) == arrayFirst.GetLength(1))
+// {
+//     int[,] arraySecond = RouteArray(arrayFirst);
+//     PrintArray(arraySecond);
+// }
+// else Console.WriteLine("Матрица не квадратная i<>j");
+ 
+// int[,] GetArray(int rows, int columns, int minValues, int maxValues)
+// {
+//     int[,] array = new int[rows, columns];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < rows; j++)
+//         {
+//             array[i, j] = new Random().Next(minValues, maxValues + 1);
+//         }
+//     }
+//     return array;
+// }
+ 
+// void SortArray(int[,] array)
+// {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         int temp = array[0, j];
+//         array[0, j] = array[array.GetLength(0) - 1, j];
+//         array[array.GetLength(0) - 1, j] = temp;
+//     }
+// }
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         Console.Write("[");
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]}  ");
+//         }
+//         Console.WriteLine("]");
+//     }
+// }
+ 
+// Метод разворота массива (строки меняются местами со столбцами)
+ 
+// int[,] RouteArray(int[,] array)
+// {
+//     int[,] array2= new int[array.GetLength(0),array.GetLength(1)];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array2[j, i]=array[i,j];
+//         }
+//     }
+//  return array2;
+// }
+ 
+//Задача 59: Из двумерного массива целых чисел удалить строку и столбец, на пересечении которых расположен наименьший элемент
+ 
+// int[,] ArrayDell(int[,] array){
+//     int numbeMin = array[0,0];
+//     int num1=0 , num2 =0;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++){
+//             if (numbeMin>array[i,j])
+//             { 
+//                 numbeMin=array[i,j];
+//                 num1=i ;
+//                 num2 = j;
+//             }
+//         }
+//     }
+ 
+//     int [,] array2 = new int[array.GetLength(0)-1,array.GetLength(1)-1];
+//     for (int i = 0 , x = 0 ; i < array.GetLength(0); x++, i++)
+//     {
+//         if ( i== num1) {
+//             x--;
+//             continue;
+//         }
+//         for (int j = 0 , y = 0; j < array.GetLength(1); y++, j++){
+//             if ( j== num2) {
+//             y--;
+//             continue;
+//             }
+//             array2[x,y]=array[i,j];
+//         }
+//     }
+//     return array2;
+// }
+ 
+// int[,] GetArrayMin(int[,] array)
+// {
+//     int iMin = 0, jMin = 0, min = array[0, 0];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (min > array[i, j])
+//             {
+//                 min = array[i, j];
+//                 iMin = i;
+//                 jMin = j;
+//             }
+//         }
+//     }
+ 
+//     Console.WriteLine($"Минимум [{iMin}, {jMin}] = {min}");
+//     int[,] arrayMin = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
+//     for (int i = 0; i < arrayMin.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arrayMin.GetLength(1); j++)
+//         {
+//             arrayMin[i,j]=array[i+(i<iMin ? 0 : 1),j+(j<jMin ? 0 : 1)];
+//         }
+//     }
+//     return arrayMin;
+// }
+ 
+// _________________________________________Домашнее задание к Восьмому Семинару___________________________________________________________
+ 
+// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// В итоге получается вот такой массив:
+// 7 4 2 1
+// 9 5 3 2
+// 8 4 4 2
+ 
+// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет
+// находить строку с наименьшей суммой элементов.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows,columns,0,10);
+ 
+// PrintArray(array);
+// Console.WriteLine("====================");
+// // GetSortColumn(array);
+// // PrintArray(array);
+// GetSumarows(array);
+ 
+// ------------------Методы-----------------------
+ 
+// Метод создания двумерного массива
+ 
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+ 
+// Метод печати двумерного масссива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+ 
+// // метод сортировки элементов по убыванию элементов в строке
+// void GetSortColumn(int[,] array){
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(1) - 1; k++)
+//             {
+//                 if (array[i, k] < array[i, k + 1])
+//                 {
+//                     int temporary = array[i, k];
+//                     array[i, k] = array[i, k + 1];
+//                     array[i, k + 1] = temporary;
+//                 }
+//             }
+//         }
+//     }
+// }
+ 
+// метод нахождения суммы элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 
+ 
+// void GetSumarows(int[,] array){
+//         int index = 0; 
+//         int minsum = 0;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         int sum = 0;
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             sum = sum + array[i, j];
+//         }
+//         Console.WriteLine($"{sum}");
+//         if (i == 0)
+//         {
+//             minsum = sum;
+//         }
+//         else if (sum < minsum)
+//         {
+//             minsum = sum;
+//             index = i;
+//         }
+ 
+//     }
+//     Console.WriteLine($"Строка с минимальной суммой элементов равна {index+1}. ");
+// }
+ 
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+ 
+// Console.WriteLine("Введите количество строк 1-го массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов 1-го массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows,columns,0,10);
+ 
+// Console.WriteLine("Введите количество строк 2-го массива: ");
+// int rows2 = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов 2-го массива: ");
+// int columns2 = int.Parse(Console.ReadLine()!);
+// int[,] array2 = GetArray(rows,columns,0,10);
+ 
+// PrintArray(array);
+// Console.WriteLine("=====================");
+// PrintArray(array2);
+// Console.WriteLine("====================");
+// PrintArray(arraymult(array,array2));
+       
+ 
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
+ 
+// Метод печати двумерного масссива
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+ 
+// метод умножения матриц
+ 
+// int[,] arraymult(int[,] array, int[,] array2)
+//         {
+//             int[,] array3 = new int[array.GetLength(0), array2.GetLength(1)];           
+//             if(array.GetLength(0) == array2.GetLength(1)){
+//                 for (int i = 0; i < array.GetLength(0); ++i){
+//                     for (int j = 0; j < array2.GetLength(0); ++j){
+//                         for (int k = 0; k < array2.GetLength(1); ++k){
+//                            array3[i, k] += array[i, j] * array2[j, k];}          
+//                     }
+//                 }
+//             } return array3;
+//         }
+
+
+
+ 
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
+ 
+// Console.WriteLine("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows,columns);
+// PrintArray(array);
+ 
+// int[,] GetArray(int m, int n){
+//     int[,] result = new int[m,n];
+//     int number = 1;
+//         for(int i = 0; i < m; i++)
+//             for(int j = 0; j < n; j++)
+//                 while(number <= n * m){
+//                 result[i, j] = number;
+//                 if (i <= j + 1 && i + j < n -1)
+//                 ++j;
+//                 else if (i < j && i + j >= n - 1)
+//                 ++i;
+//                 else if (i >= j && i + j > n - 1)
+//                 --j;
+//                 else
+//                 --i;
+//                 ++number;}
+            
+//     return result;
+// }
+ 
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
