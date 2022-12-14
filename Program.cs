@@ -1462,3 +1462,63 @@ Console.WriteLine($"Квадрат числа {number} = {sqr1}");
 //         Console.WriteLine();
 //     }
 // }
+
+// _________________________________________Домашнее задание к Девятому Семинару___________________________________________________________
+ 
+// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+ 
+// N = 5 -> "5, 4, 3, 2, 1"
+// N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+ 
+// Console.Write("Введите N: ");
+// int N = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(PrintNumbers(N,1));
+ 
+// string PrintNumbers(int start, int end){
+//     if(start == end) return start.ToString();
+//     return(start + " " + PrintNumbers(start - 1, end));
+// }
+ 
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+ 
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+ 
+// Console.Write("введите число M: ");
+// int m = int.Parse(Console.ReadLine()!);
+ 
+// Console.Write("введите число N: ");
+// int n = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine(PrintNumber(m,n));
+ 
+// int PrintNumber(int M, int N){
+//     if (M==N) return M;
+//     return(M += PrintNumber(M + 1, N));
+// }
+
+
+
+
+ 
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
+ 
+// Console.Write("введите число M: ");
+// int m = int.Parse(Console.ReadLine()!);
+ 
+// Console.Write("введите число N: ");
+// int n = int.Parse(Console.ReadLine()!);
+ 
+// Console.WriteLine(Akerman(m,n));
+ 
+// int Akerman(int M, int N){
+//     if (M == 0) 
+//     return N+1;
+//     else
+//        if (N == 0) 
+//        return Akerman(M-1,1);
+//     else
+//        return Akerman(M-1, Akerman(M, N-1));
+// }
